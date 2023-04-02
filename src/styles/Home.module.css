@@ -1,0 +1,76 @@
+/****STYLE MYROLDANO****/
+
+.home__content{
+    display: flex;
+}
+
+.home__left {
+    
+}
+
+.home__right {
+
+}
+
+/****STYLE MYROLDANO****/
+
+.home{
+    grid-row: 2/4;
+    justify-content: space-around;
+}
+.backImg{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.welcome{
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15% 0 0 18%;
+    justify-content: space-around;
+    z-index: 2;
+
+}
+
+.mainTitle{
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.2rem;
+    word-spacing: 0.3rem;
+    color: #68d248;
+    text-align: center;
+}
+.paragraph{
+    font-size: 18px;
+    letter-spacing: 0.08rem;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    color: #fff;
+    margin-bottom: 8%;;
+}
+
+
+.button{
+    bottom: 0;
+    right: 0;
+    background-color: #163a3e;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.1rem;
+    transition: all 0.6s ease-in;
+    border: 2px outset;
+}
+
+.button:hover{
+    background-color: rgb(114, 32, 134);
+    
+}
