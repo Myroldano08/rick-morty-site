@@ -1,41 +1,92 @@
-.modalContainer{
-    grid-column: 2/3;
-    margin: 10% 10%;
-    width: 100%;
-    background-color: white;
-    border-radius: 20px;
-    z-index: 3;
+.content {
+
 }
-.modalElements{
-    display: grid;
-    grid-template-columns: 57% 5%;
-}
-.text{
+
+.content__top {
+    height: 100%;
+    max-height: 171px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: stretch;
+    justify-content: space-between;
 }
-.name{
-    font-size: 27px;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.1rem;
+
+.content__back {
+
+}
+
+.content__img {
+    position: relative;
+}
+
+.content__image{
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+}
+
+.content__button {
+    border-radius: 20px;
+    border: none;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+}
+
+.content__link{
+    text-decoration: none;
+}
+
+.content__name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #111827;
+}
+
+.content__bottom{
+    margin: 20px 0;
+}
+
+.content__elements {
+
+}
+
+.content__info{
+
+}
+.content__hr {
+    border: 1px solid #E5E7EB;
+}
+
+.content__list {
+
+}
+
+.content__item {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    cursor: grab;
+    justify-content: center;
+}
+
+.content__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: #111827;
+}
+
+.content__text {
+    font-style: normal;
     font-weight: 500;
-    margin-bottom: 0;
-    margin-left: 5px;
-    padding: 8px 30px;
-    align-self: center;
-    border-bottom: 2px solid #68d248;
-}
-
-.info{
-    list-style: none;
-    margin-top: 0;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 20px;
-    word-spacing: 20px;
-}
-
-.imgDetail{
-    right: 0;
-    border-radius: 0 20px 20px 0;
+    font-size: 16px;
+    line-height: 21px;
+    color: #6B7280;
 }

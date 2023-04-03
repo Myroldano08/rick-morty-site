@@ -2,7 +2,9 @@ import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import { useEffect } from 'react';
 import style from '../styles/Home.module.css'
-import List from "./List"
+import List from "./ListFavorite"
+
+
 
 export default function Favorites(){
    const { ID } = useParams();
@@ -12,6 +14,7 @@ export default function Favorites(){
    }, [ID]);
     return(
         <div className={style.favorites}>
+            <span className={style.list__character}>Starred Characters <b> :</b></span>
             {  (favorites.length > 0)?
                favorites.map((el, key) => {
                   return(
@@ -23,7 +26,7 @@ export default function Favorites(){
                      />
                      )
                   })
-                  : <p className={style.noFavs}>Oops! no favorites yet. Add your favorites characters!</p>
+                  : ""
                }
          </div>
     )
