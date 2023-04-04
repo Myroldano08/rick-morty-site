@@ -6,28 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../src/redux/store'
 
-import style from './styles/Home.module.css'
-import { BrowserRouter as Roter, Routes, Route } from 'react-router-dom'
-
-import Sidebar from './components/Sidebar'
-import Content from './components/Content'
-import Search from './components/Search'
+import Home from './components/Home';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-
-      <div className={style.home__content}>
-          <div className={style.home__left}>
-              <Search />
-              <Sidebar />
-          </div>
-          <div className={style.home__right}>
-              <Content />
-          </div>
-      </div>
-
+        <Home />
     </BrowserRouter>
   </Provider>
 );

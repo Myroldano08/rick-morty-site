@@ -63,8 +63,18 @@
     background-color: transparent;
 }
 
+.list__button_name {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
 .list__link {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .list__icon {

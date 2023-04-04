@@ -1,12 +1,13 @@
 import List from './List';
 import {useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react';
-import { getCharacters } from '../redux/actions/index'
+import { getCharacters, getCharactersFilter } from '../redux/actions/index'
 import style from '../styles/Home.module.css'
 import styleList from '../styles/List.module.css'
 
 export default function Sidebar({onClose, onSearch}) {
     const { characters } = useSelector(state => state);
+    // const [isClic, setIsClic] = useState(false);
     let [ idUrl ] = useState(1)
     const dispatch = useDispatch();
 

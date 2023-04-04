@@ -6,11 +6,11 @@ import Favorites from './Favorites'
 
 const Content = () => {
     return (
-        <div className={style.home__right}>
+        // <div className={style.home__right}>
             <Routes>
                 <Route path={'/detail/:ID'} exact={true} Component={Details} />   
             </Routes>
-        </div>
+        // </div>
     )
 }
 

@@ -21,6 +21,18 @@ export const getCharacters = (id) =>{
     }
 }
 
+export const getCharactersFilter = (character, dataC, specie, dataS) =>{
+  return async (dispatch) =>{
+      const response = await axios.get(
+        `https://rickandmortyapi.com/api/character/?${character}=${dataC}&${specie}=${dataS}`
+      );
+      return dispatch({
+          type: GET_CHARACTERS,
+          payload: response.data.results
+      })
+  }
+}
+
 export const getCharacterDetail = (id) => {
   return async (dispatch) => {
     const response = await axios.get(
