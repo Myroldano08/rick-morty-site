@@ -6,15 +6,25 @@ import style from '../styles/Home.module.css'
 import styleList from '../styles/List.module.css'
 
 export default function Sidebar({onClose, onSearch}) {
-    const { characters } = useSelector(state => state);
+    const { characters, characterFilter} = useSelector(state => state);
     // const [isClic, setIsClic] = useState(false);
     let [ idUrl ] = useState(1)
     const dispatch = useDispatch();
 
+    console.log('characterFilter: ',characterFilter)
+
     useEffect(()=>{
-        dispatch(getCharacters(idUrl));
+        if (characterFilter.specie ==  ''
+            && characterFilter.gender == '' 
+            && characterFilter.status == ''
+        ) {
+            dispatch(getCharacters(idUrl));
+        }else {
+            dispatch(getCharactersFilter(characterFilter.status,characterFilter.specie,characterFilter.gender));
+        }       
         
-    }, [idUrl]);
+        
+    }, [characterFilter, idUrl]);
     return (
         <div className={style.sidebar}>
             <span className={style.sidebar__character}>Starred Characters <b> : {characters.length}</b></span>

@@ -1,8 +1,11 @@
-import axios from 'axios'
+import axios from 'axios';
+
 import {
   GET_CHARACTERS,
   GET_CHARACTER_DETAIL,
+  GET_CHARACTERS_FILTER,
   ADD_FAVORITE,
+  FILTER_CHARACTER,
   DELETE_FAVORITE,
   GET_FAVORITES,
   FILTER,
@@ -21,13 +24,34 @@ export const getCharacters = (id) =>{
     }
 }
 
-export const getCharactersFilter = (character, dataC, specie, dataS) =>{
+export const getCharactersFilter = (status, specie, gender) =>{
+  let concatStatus = '';
+  if (status != '') {
+    concatStatus = `status=${status}`
+  }
+  if (specie != '') {
+    if (specie == 'alls') {
+       console.log("specie: ",specie);
+    }else{
+      if(concatStatus.length > 0){
+        concatStatus+= '&';
+      }
+      concatStatus += `species=${specie}`
+    }
+  }
+  if (gender != '') {
+    if(concatStatus.length > 0){
+      concatStatus+= '&';
+    }
+    concatStatus += `gender=${gender}`
+  }
+  
   return async (dispatch) =>{
       const response = await axios.get(
-        `https://rickandmortyapi.com/api/character/?${character}=${dataC}&${specie}=${dataS}`
+        `https://rickandmortyapi.com/api/character/?${concatStatus}`
       );
       return dispatch({
-          type: GET_CHARACTERS,
+          type: GET_CHARACTERS_FILTER,
           payload: response.data.results
       })
   }
@@ -44,6 +68,14 @@ export const getCharacterDetail = (id) => {
     });
   };
 };
+
+export const filterCharacter = (data) =>{
+  console.log("filterCharacter: ", data);
+  return{
+      type: FILTER_CHARACTER,
+      payload: data
+  }
+}
 
 export const addFavorite = (favorite) =>{
     return{

@@ -1,9 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getCharacterDetail, addFavorite, deleteFavorite  } from "../redux/actions";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styleDetail from '../styles/Detail.module.css'
 import style from '../styles/Home.module.css'
+import Mycontext from '../context/contextActive'
 
 
 export default function Details(){
@@ -12,17 +13,11 @@ export default function Details(){
     const character = useSelector(state => state.characterDetail);
     const { ID } = useParams();
     const dispatch = useDispatch();
+    const { contextValue, setContextValue } = useContext(Mycontext);
 
-    // const [isClic, setIsClic] = useState();
-    // const handleClic = (isClic)=>{
-    //     if(isClic){
-    //         setIsClic(false);
-    //         console.log('CLIC3: ', isClic)
-    //     }else{
-    //         setIsClic(true);
-    //         console.log('NO CLIC3: ', isClic)
-    //     }
-    // }
+    const handleClick = () => {
+        setContextValue(false)
+    }
 
     useEffect(() => {
             dispatch(getCharacterDetail(ID))
@@ -40,15 +35,18 @@ export default function Details(){
         if(isFavorite){
             setFavorite(false);
             dispatch(deleteFavorite(character?.id));
+            handleClick();
             console.log('NO favorito')
         }else{
             if (!bool) {
                 setFavorite(true);
                 dispatch(addFavorite(character));
+                handleClick();
                 console.log('favorito')
             }else{
                 setFavorite(false);
                 dispatch(deleteFavorite(character?.id));
+                handleClick();
                 console.log('NO favorito')
             }
             
@@ -60,7 +58,7 @@ export default function Details(){
             <div className={styleDetail.content__top}>
                 <div className={styleDetail.content__back}>
                     {/* <i className={style.icon_arrow_left2}></i> */}
-                    <button  className={styleDetail.content__button_name}>
+                    <button onClick={handleClick} className={styleDetail.content__button_name}>
                         <svg className={style.icon_arrow} width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 15L1 8M1 8L8 1M1 8L19 8" stroke="#D1D5DB" />
                         </svg>

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { addFavorite, deleteFavorite } from '../redux/actions';
 import style from '../styles/Home.module.css'
 import styleFavorite from '../styles/Favorite.module.css'
+import Mycontext from '../context/contextActive';
 // import { clicContext } from './Home';
 
 
@@ -12,18 +13,11 @@ export default function List(props) {
     const lists = useSelector(state => state.characters);
     const [ isFavorite, setFavorite ] = useState(false);  
     const dispatch = useDispatch();
-    // const click = clicContext(clicContext);
+    const { contextValue, setContextValue } = useContext(Mycontext);
 
-    // const [isClic, setIsClic] = useState();
-    // const handleClic = (isClic)=>{
-    //     if(isClic){
-    //         setIsClic(false);
-    //         console.log('CLIC2: ', isClic)
-    //     }else{
-    //         setIsClic(true);
-    //         console.log('CLIC2: ', isClic)
-    //     }
-    // }
+    const handleClick = () => {
+        setContextValue(true)
+    }
 
     const checkFavs = ()=>{
         let bool = false;
@@ -73,7 +67,7 @@ export default function List(props) {
             <img  src={props.image} alt="" className={styleFavorite.list__image}/>
             
             <div className={styleFavorite.list__data}>
-                    <button className={styleFavorite.list__button_name}>
+                    <button onClick={handleClick} className={styleFavorite.list__button_name}>
                         <Link to={`/detail/${props.id}`} className={styleFavorite.list__link}>
                             <span className={styleFavorite.list__name}>{props.name}</span>
                         </Link>

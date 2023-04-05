@@ -96,7 +96,7 @@ body {
   width: 100%;
   min-width: 320px;
   max-width: 768px;
-  background-color: #e5e5e5;
+  /* background-color: #e5e5e5; */
 }
 
 .home__left_active {
@@ -109,7 +109,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   z-index: 2;
   background-color: #fff;
 }
@@ -120,7 +120,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   z-index: 2;
   background-color: #fff;
 }
@@ -128,7 +128,6 @@ body {
 .search {
   width: 100%;
   padding: 0 20px;
-  padding-top: 20px;
 }
 
 .list__character {
@@ -163,7 +162,7 @@ body {
   border-radius: 8px;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: initial;
 }
 
 .search__input {
@@ -191,22 +190,50 @@ body {
 }
 
 .filter__popup {
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   max-width: 95%;
-  height: 278px;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   padding: 10px;
-  gap: 5px;
   background: #FFFFFF;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   align-content: space-between;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.filter__content{}
+
+.filter__button.filter__button_active {
+  background: #8054C7;
+}
+
+.filter__button.filter__button_active .filter__link{
+  color: #FFFFFF;
+}
+
+.filter__list{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.filter__tilte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.filter__button_name {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .filter__character{
@@ -218,11 +245,20 @@ body {
 .filter__text {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   color: #6B7280;
   padding: 0 10px;
 }
+.filter__done {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: right;
+  color: #8054C7;
+}
+
 
 .filter__specie {
   display: flex;
@@ -234,13 +270,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  gap: 12px;
   width: 100%;
-  height: 44px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 8px;
+}
+
+.filter__radio .filter__input:checked + .filter__label {
+  background: #EEE3FF;
+  color: #8054C7;
+}
+
+.filter__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #6B7280;
 }
 
 .filter__input {
@@ -248,7 +296,16 @@ body {
 }
 
 .filter__label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  gap: 12px;
   width: 100%;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -258,7 +315,16 @@ body {
 }
 
 .filter__button {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 17px;
+  width: 100%;
+  height: 39px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  border: none;
 }
 
 .favorites {
@@ -311,13 +377,52 @@ body {
     align-items: stretch;
     flex-direction: column;
     width: 90%;
+    /* height: 100vh; */
     padding: 20px;
-  
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.05);
   }
   .home__left_active {
     display: flex;
+    justify-content: flex-start;
   }
   .home__right_active {
     position: initial;
+  }
+  .search__content {
+    display: flex;
+    padding: 0 10px;
+    gap: 8px;
+    height: 52px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .filter__popup {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-width: 95%;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    align-content: space-between;
+    justify-content: space-evenly;
+  }
+  .filter__popup  .filter__tilte {
+    display: none;
+  }
+  .filter__popup  .favorites {
+    display: none;
+  }
+  .filter__popup  .filter__list {
+    display: none;
   }
 }
