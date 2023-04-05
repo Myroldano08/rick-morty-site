@@ -28,7 +28,7 @@ Estos son los requisitos previos que se debe cumplir para ejecutar la aplicació
 
 Node.js y npm
 
-Dependencias: @reduxjs/toolkit, classnames, react, axios, react-router-domy redux
+Dependencias: classnames, react, axios, react-router-domy redux
 
 
 ***Instalación***
@@ -42,7 +42,6 @@ Paso 2: : Instalar las dependencias
 
 Ejecuta cada uno de los comandos para instalar las dependencias en el directorio de la aplicacion "rick-morty-site"
 
-npm install @reduxjs/toolkit
 npm install classnames
 npm install react
 npm install axios
