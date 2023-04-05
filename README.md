@@ -1,6 +1,8 @@
-RICK AND MORTY 
+***RICK AND MORTY***
 
-Características:
+
+
+***Características:***
 
 - Utiliza ReactJS como biblioteca de JavaScript para la construcción de la interfaz de usuario.
 - Utiliza la API de Rick and Morty (https://rickandmortyapi.com/) para obtener información sobre los personajes.
@@ -10,7 +12,7 @@ Características:
 - Es responsive y se adapta a diferentes tamaños de pantalla, como dispositivos móviles y tabletas.
 - Implementa una interfaz de usuario atractiva y fácil de usar con un diseño limpio y moderno.
 
-Tecnologías utilizadas:
+***Tecnologías utilizadas:***
 
 -ReactJS como biblioteca de JavaScript para la construcción de la interfaz de usuario.
 - Axios para realizar las llamadas a la API de Rick and Morty y obtener datos de los personajes.
@@ -20,7 +22,7 @@ Tecnologías utilizadas:
 
 Esta aplicación en ReactJS consulta la API de Rick and Morty, muestra información de los personajes en un grid lateral con opción de vista detallada, y permite realizar búsquedas por status, especie y género. Además, es responsive y funcional, ofreciendo una experiencia de usuario atractiva y fácil de usar.
 
-Requisitos Previos
+***Requisitos Previos***
 
 Estos son los requisitos previos que se debe cumplir para ejecutar la aplicación
 
@@ -29,7 +31,7 @@ Node.js y npm
 Dependencias: @reduxjs/toolkit, classnames, react, axios, react-router-domy redux
 
 
-Instalación
+***Instalación***
 
 ***Cabe resaltar que mi rama principal es llamada {main} con la m en minuscula, por lo que alli encontraran todo el codigo necesario y donde podran hacer checkout***
 
@@ -48,7 +50,7 @@ npm install react-router-dom
 npm install redux
 
 
-Ejecución
+***Ejecución***
 
 Paso 1: Navegar al directorio de la aplicación en este caso "/rick-morty-site" y abre una terminal en la ubicación donde esta creada la aplicación React.
 
@@ -72,7 +74,7 @@ Paso 5: Si deseas finalizar o Detener el servidor de desarrollo
 Regresa a la terminal y presiona Ctrl+C para interrumpir el proceso.
 
 
-Uso de la API
+***Uso de la API***
 
 1. Obtener la lista de personajes:
 
