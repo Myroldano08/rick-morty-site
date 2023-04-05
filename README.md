@@ -31,6 +31,8 @@ Dependencias: @reduxjs/toolkit, classnames, react, axios, react-router-domy redu
 
 Instalación
 
+***Cabe resaltar que mi rama principal es llamada {main} con la m en minuscula, por lo que alli encontraran todo el codigo necesario y donde podran hacer checkout***
+
 Paso 1: Verificar Node.js y npm
 Asegúrate de tener Node.js y npm instalados en tu sistema. 
 
@@ -74,51 +76,51 @@ Uso de la API
 
 1. Obtener la lista de personajes:
 
-    Endpoint: /character
-    Método: GET
-    Parámetros aceptados:
-        page: número de página para obtener resultados paginados (opcional, valor por defecto: 1)
-    Respuesta esperada:
-        Un objeto JSON con la información de los personajes, incluyendo su nombre, especie, género, estado, ubicación, entre otros.
-        Ejemplo de uso con Axios en React:
+    - Endpoint: /character
+    - Método: GET
+    - Parámetros aceptados:
+    	- page: número de página para obtener resultados paginados (opcional, valor por defecto: 1)
+    - Respuesta esperada:
+    	- Un objeto JSON con la información de los personajes, incluyendo su nombre, especie, género, estado, ubicación, entre otros.
+    Ejemplo de uso con Axios en React:
         
 ![image](https://user-images.githubusercontent.com/70772803/229958517-22787673-3a86-4ed7-acf3-0bac458d2899.png)
 
 2. Obtener información de un personaje específico:
     
-    Endpoint: /character/{id}
-    Método: GET
-    Parámetros aceptados:
-        id: identificador único del personaje (obligatorio)
-    Respuesta esperada:
-        Un objeto JSON con la información detallada del personaje, incluyendo su nombre, especie, género, estado, ubicación, entre otros.
-        Ejemplo de uso con Axios en React:
+    - Endpoint: /character/{id}
+    - Método: GET
+    - Parámetros aceptados:
+    	- id: identificador único del personaje (obligatorio)
+    - Respuesta esperada:
+    	- Un objeto JSON con la información detallada del personaje, incluyendo su nombre, especie, género, estado, ubicación, entre otros.
+    Ejemplo de uso con Axios en React:
 
 ![image](https://user-images.githubusercontent.com/70772803/229958720-284d46f7-4fda-4221-87b1-fe825583aea6.png)
 
 3. Buscar personajes por nombre:
     
-    Endpoint: /character/?name={nombre}
-    Método: GET
-    Parámetros aceptados:
-        name: nombre del personaje para realizar la búsqueda (obligatorio)
-    Respuesta esperada:
-        Un objeto JSON con la lista de personajes que coinciden con el nombre proporcionado.
-        Ejemplo de uso con Axios en React:
+    - Endpoint: /character/?name={nombre}
+    - Método: GET
+    - Parámetros aceptados:
+    	- name: nombre del personaje para realizar la búsqueda (obligatorio)
+    - Respuesta esperada:
+    	- Un objeto JSON con la lista de personajes que coinciden con el nombre proporcionado.
+    Ejemplo de uso con Axios en React:
 
 ![image](https://user-images.githubusercontent.com/70772803/229958907-f7e40eeb-52c7-4d08-8801-6577a8779b80.png)
 
 4. Filtrar personajes por estado, especie y género:
     
-    Endpoint: /character/?status={status}&species={species}&gender={gender}
-    Método: GET
-    Parámetros aceptados:
-        status: estado del personaje (opcional)
-        species: especie del personaje (opcional)
-        gender: género del personaje (opcional)
-    Respuesta esperada:
-    Un objeto JSON con la lista de personajes que coinciden con los filtros proporcionados.
-    Ejemplo de uso con Axios en React:
+    - Endpoint: /character/?status={status}&species={species}&gender={gender}
+    - Método: GET
+    - Parámetros aceptados:
+        - status: estado del personaje (opcional)
+        - species: especie del personaje (opcional)
+        - gender: género del personaje (opcional)
+    - Respuesta esperada:
+    	- Un objeto JSON con la lista de personajes que coinciden con los filtros proporcionados.
+	Ejemplo de uso con Axios en React:
     
 ![image](https://user-images.githubusercontent.com/70772803/229959103-48a7a608-5ff0-4f0c-a1a7-c895cdc97a29.png)
 
